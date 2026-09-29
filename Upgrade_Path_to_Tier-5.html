@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upgrade path to Tier 5 — Solar Homes in Africa</title>
+  <meta name="description" content="Working path from the Tier-2 entry system through Tier 3 to Tier-5 household electrical service using roughly 2.4 kWp or more of PV, 48 V LiFePO4 storage and a 5–6 kW hybrid inverter.">
+  <meta name="theme-color" content="#18302b">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1.11">
+</head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt=""><span>Solar Homes in Africa<small>prototype project</small></span></a><nav class="nav-links" aria-label="Page navigation"><a href="index.html">Home</a><a href="#target">Target</a><a href="#array">PV</a><a href="#storage">Storage</a><a href="#loads">Loads</a><a href="#costs">Costs</a></nav></div></header>
+<main>
+<section class="subhero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Solar Homes in Africa</a> / Upgrade path to Tier 5</div>
+    <div class="eyebrow">Upgrade path · Tier 3 → Tier 5</div>
+    <h1>Upgrade path to Tier&nbsp;5.</h1>
+    <p class="lede">Tier 5 is no longer a charging shelf with extras. It is a real household power system: kilowatts of PV, a 48 V battery, a hybrid inverter and fixed AC circuits. The project’s working reference is roughly 2.4 kWp of panels, 5–15 kWh of LiFePO₄ storage and a 5–6.3 kW inverter — while keeping the original Tier-2 DC system as a small independent backup.</p>
+    <div class="spec-grid">
+      <div class="spec-card"><b>2.0 kW</b><span>Tier-5 minimum power-capacity shorthand</span></div>
+      <div class="spec-card"><b>2.4–2.7 kWp</b><span>more practical working PV target</span></div>
+      <div class="spec-card"><b>5 / 10 / 15 kWh</b><span>minimum / standard / high-margin storage ladder</span></div>
+      <div class="spec-card"><b>5–6.3 kW</b><span>working hybrid-inverter class</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="target">
+  <div class="container">
+    <div class="section-head"><h2>The threshold and the practical design are not the same thing.</h2><p>The Tier-5 shorthand is 2 kW of capacity and 8.2 kWh/day. Three 666 W panels or five 400 W panels are almost exactly 2.0 kWp and therefore satisfy the power threshold on paper. But at 5 peak-sun-hours and a conservative 75% net system yield, 2.0 kWp produces only about 7.5 kWh/day. The project therefore treats ~2.4 kWp as a more realistic starting array.</p></div>
+    <div class="cards">
+      <article class="card"><span class="num">MINIMUM</span><h3>3 × 666 W or 5 × 400 W</h3><p>About 2.0 kWp. This is the useful lower boundary for thinking about Tier 5, but it leaves little energy margin after real-world losses.</p></article>
+      <article class="card"><span class="num">WORKING TARGET</span><h3>4 × 600 W or 6 × 400 W</h3><p>About 2.4 kWp. At 5 peak-sun-hours and 75% net yield, that is about 9 kWh/day — enough to clear the 8.2 kWh shorthand on a typical day.</p></article>
+      <article class="card"><span class="num">MORE MARGIN</span><h3>4 × 666 W or similar</h3><p>About 2.66 kWp. More PV is often cheaper than more battery and makes cooking, pumping and cooling easier to schedule directly into daylight.</p></article>
+    </div>
+    <div class="architecture">
+      <h3>The household grows around, rather than through, the original system.</h3>
+      <div class="flow-row">
+        <div class="flow-box"><strong>Original ~100 W panel</strong><small>still useful</small></div><div class="flow-arrow">→</div>
+        <div class="flow-box"><strong>Distributor V1</strong><small>independent DC charging shelf</small></div><div class="flow-arrow">→</div>
+        <div class="flow-box"><strong>Portable appliances</strong><small>lighting and communications backup</small></div>
+      </div>
+      <div class="flow-row" style="margin-top:12px">
+        <div class="flow-box"><strong>~2.4 kWp+ PV array</strong><small>stringing matched to inverter MPPT limits</small></div><div class="flow-arrow">→</div>
+        <div class="flow-box"><strong>48 V hybrid inverter</strong><small>MPPT · charger · inverter · transfer</small></div><div class="flow-arrow">↔</div>
+        <div class="flow-box"><strong>5–15 kWh LiFePO₄</strong><small>10 kWh working standard</small></div><div class="flow-arrow">→</div>
+        <div class="flow-box"><strong>House distribution board</strong><small>fixed AC circuits + heavy appliances</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="array">
+  <div class="container">
+    <div class="section-head"><h2>Panel count is easy. String design is not.</h2><p>At this scale, module wattage alone is not enough. Each string must sit inside the chosen hybrid inverter’s MPPT voltage window, remain below its maximum open-circuit voltage in cool weather, and remain below its per-input current limit. Different panel types should normally be kept on separate MPPT inputs.</p></div>
+    <div class="reference-table-wrap"><table class="data-table reference-table">
+      <thead><tr><th>Array example</th><th>Nameplate PV</th><th>Illustrative usable energy at 5 PSH × 75%</th><th>Project interpretation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>3 × 666 W</strong></td><td>2.00 kWp</td><td>~7.5 kWh/day</td><td>Minimum-size Tier-5 power array; energy margin is thin.</td></tr>
+        <tr><td><strong>5 × 400 W</strong></td><td>2.00 kWp</td><td>~7.5 kWh/day</td><td>Same energy issue; five modules may also be awkward to divide between two high-voltage MPPT inputs.</td></tr>
+        <tr><td><strong>4 × 600 W</strong></td><td>2.40 kWp</td><td>~9.0 kWh/day</td><td>Current LagosVerter-style reference size and a good working Tier-5 starting point.</td></tr>
+        <tr><td><strong>6 × 400 W</strong></td><td>2.40 kWp</td><td>~9.0 kWh/day</td><td>Convenient for two equal 3-panel strings on many dual-MPPT hybrids, subject to the actual voltage/current window.</td></tr>
+        <tr><td><strong>4 × 666 W</strong></td><td>2.66 kWp</td><td>~10.0 kWh/day</td><td>Useful extra margin for cooking, pumping or modest cooling.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="callout" style="margin-top:24px"><strong>Do not infer stringing from this table.</strong> “Five 400 W panels” describes total PV capacity, not a universal 3+2 wiring recipe. A two-panel string can fall below the minimum MPPT voltage of some high-voltage hybrids. The final series/parallel layout must be designed around the exact inverter datasheet and local temperature range.</p>
+  </div>
+</section>
+
+<section id="storage">
+  <div class="container">
+    <div class="section-head"><h2>48 V storage becomes the organizing bus.</h2><p>Tier 5 is where a 48 V-class battery starts to make obvious electrical sense. At several kilowatts, a 24 V battery would require very high current; 48 V keeps conductors, switches and inverter input current manageable. The project is using a 5 / 10 / 15 kWh storage ladder rather than pretending there is one universally correct battery size.</p></div>
+    <div class="cards">
+      <article class="card"><span class="num">5 kWh</span><h3>Minimum practical start</h3><p>Enough for several hours of important evening loads if cooking, pumping and other heavy work are moved into daylight. It is not a full day of Tier-5 energy.</p></article>
+      <article class="card"><span class="num">10 kWh</span><h3>Working standard</h3><p>Roughly comparable to the Tier-5 daily-energy threshold and much more comfortable for refrigeration, evening loads and an overnight reserve.</p></article>
+      <article class="card"><span class="num">15 kWh</span><h3>High-margin household</h3><p>More useful where clouds are common, nighttime cooling matters, or the grid is unreliable enough that the battery is doing backup duty as well as solar shifting.</p></article>
+    </div>
+    <p class="callout" style="margin-top:24px"><strong>The Tier-3 battery may not become part of the 48 V bank.</strong> A 12.8 V or 25.6 V pack should not simply be series-stacked with unrelated batteries. It can remain useful on a dedicated DC circuit, be reassigned to refrigeration or lighting backup, or be resold. “Upgradeable” should mean preserving value, not forcing every earlier component into one electrical bus.</p>
+  </div>
+</section>
+
+<section class="band" id="loads">
+  <div class="container">
+    <div class="section-head"><h2>At Tier 5, schedule matters almost as much as capacity.</h2><p>Several household loads draw kilowatts but only briefly. Running them while the sun is strong can keep both the battery and the inverter smaller. The load list below is illustrative; actual priorities will differ enormously among households.</p></div>
+    <div class="reference-table-wrap"><table class="data-table reference-table">
+      <thead><tr><th>Load</th><th>Typical role in the system</th><th>Working energy/day</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Refrigerator / freezer</strong></td><td>Continuous essential load; efficiency and ambient temperature matter greatly.</td><td>0.8–1.5 kWh</td></tr>
+        <tr><td><strong>Electric cooking</strong></td><td>Pressure cooker, rice cooker or induction; preferentially midday.</td><td>1.5–2.5 kWh</td></tr>
+        <tr><td><strong>Lighting, phones, radio, internet</strong></td><td>Small loads; original portable devices remain useful during faults.</td><td>0.3–0.7 kWh</td></tr>
+        <tr><td><strong>Fans and television</strong></td><td>Long-duration comfort and information loads.</td><td>0.7–1.5 kWh</td></tr>
+        <tr><td><strong>Water pumping</strong></td><td>Best used directly from midday PV; store water rather than electricity.</td><td>0.3–0.8 kWh</td></tr>
+        <tr><td><strong>Washing / tools / small enterprise loads</strong></td><td>Schedule flexible work into solar hours.</td><td>0.3–1.0 kWh</td></tr>
+        <tr><td><strong>Inverter air conditioning</strong></td><td>Optional major load; pre-cooling in daylight can reduce battery demand.</td><td>2–5 kWh</td></tr>
+        <tr><td><strong>Working total without / with substantial cooling</strong></td><td></td><td><strong>~4–7 kWh / ~7–11 kWh</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p class="callout" style="margin-top:24px"><strong>Tier 5 also means fixed AC wiring.</strong> Unlike the entry system, this rung needs a distribution board, over-current protection, residual-current protection where applicable, earthing, correctly sized branch circuits and installation to the local electrical standard. That is a fundamentally different field skill from mounting a panel and charging shelf.</p>
+  </div>
+</section>
+
+<section class="finance" id="costs">
+  <div class="container">
+    <div class="section-head"><h2>Working hardware economics.</h2><p>The project’s present Tier-5 cost model is built around commodity PV, a low-cost 48 V hybrid inverter and modular 5 kWh-class LiFePO₄ batteries. It is closer to the LagosVerter economics than to conventional North American rooftop-solar pricing. These are working targets, not supplier quotations.</p></div>
+    <div class="reference-table-wrap"><table class="data-table reference-table">
+      <thead><tr><th>Element</th><th>5 kWh starting system</th><th>10 kWh standard system</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PV, about 2.4 kWp</strong></td><td>~US$300–350</td><td>~US$300–350</td></tr>
+        <tr><td><strong>48 V LiFePO₄</strong></td><td>~US$600 target</td><td>~US$1,200 target</td></tr>
+        <tr><td><strong>5–6.3 kW hybrid inverter</strong></td><td>~US$450–600</td><td>~US$450–600</td></tr>
+        <tr><td><strong>DC/AC protection, mounting, wire, enclosure</strong></td><td>~US$200–350</td><td>~US$200–350</td></tr>
+        <tr><td><strong>Working hardware envelope</strong></td><td><strong>~US$1,550–1,900</strong></td><td><strong>~US$2,150–2,500</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p class="assumption" style="margin-top:16px">Fixed-house wiring, installation labor, transport, taxes, duties, financing and service are not included. A 15 kWh battery increases the hardware total again, but battery modules can be added after the initial installation if the inverter and protection system are designed for expansion.</p>
+  </div>
+</section>
+
+<section class="status" id="status">
+  <div class="container">
+    <div class="section-head"><h2>Where this rung stands.</h2><p>The Tier-5 page is an architecture and economics study. The purpose is not to pretend that every Tier-2 household will buy this system. It is to show that the first rung can lead somewhere substantial without making the first installation unnecessarily expensive.</p></div>
+    <div class="status-grid">
+      <div class="status-block"><h3>Working principles</h3><ul><li>About 2.4 kWp is a more useful starting target than the bare 2.0 kW threshold.</li><li>48 V LiFePO₄ storage in a 5 / 10 / 15 kWh ladder.</li><li>5–6.3 kW hybrid inverter with MPPT inputs appropriate to the actual panel strings.</li><li>Keep different panel types on separate MPPT inputs where practical.</li><li>Schedule cooking, pumping and flexible work into daylight.</li><li>Keep the original Tier-2 charging shelf as independent low-power backup.</li></ul></div>
+      <div class="status-block"><h3>Still open</h3><ul><li>Country-specific 230 V / 50 Hz hybrid inverter platform and protection scheme.</li><li>Best module size: 400 W, 600 W, 666 W or another commodity class at deployment time.</li><li>Installer training for fixed AC wiring and earthing.</li><li>Landed cost of 5 kWh battery modules at very large volume.</li><li>How much Tier-3 equipment is retained, reassigned or resold during the 48 V transition.</li></ul></div>
+    </div>
+    <div class="page-footer-links"><a class="button secondary" href="Upgrade_Path_to_Tier-3.html">← Upgrade path to Tier 3</a><a class="button secondary" href="index.html">Main project →</a></div>
+    <p class="disclaimer" style="margin-top:22px"><strong>Documentation note:</strong> the 2 kW / 8.2 kWh/day Tier-5 shorthand is only one part of the World Bank/ESMAP Multi-Tier Framework. Formal Tier 5 also depends on availability, reliability, quality, affordability, safety and other attributes. Figures here are project working assumptions for an off-grid or weak-grid household system.</p>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-grid"><div><strong>Solar Homes in Africa</strong><br>Upgrade path to Tier 5 · 2026</div><div>Static project documentation · <a href="index.html">home</a></div></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
