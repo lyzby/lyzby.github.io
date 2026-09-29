@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Solar Homes in Africa mark">
+  <circle cx="48" cy="33" r="19" fill="#f4b63f"/>
+  <path d="M18 52 48 29l30 23v27H18z" fill="#17332d"/>
+  <path d="M30 54h36v25H30z" fill="#f7f1e6"/>
+  <path d="M44 62h9v17h-9z" fill="#17332d"/>
+  <path d="M18 52 48 29l30 23" fill="none" stroke="#f7f1e6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
