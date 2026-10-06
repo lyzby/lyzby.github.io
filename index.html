@@ -7,7 +7,7 @@
   <meta name="description" content="An early-stage engineering project exploring a low-cost, serviceable path from basic household solar to much higher levels of electrical access.">
   <meta name="theme-color" content="#18302b">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=1.11">
+  <link rel="stylesheet" href="styles.css?v=1.12">
 </head>
 <body>
 <header class="site-header">
@@ -36,7 +36,7 @@
 </section>
 <div class="stats">
   <div class="container stats-grid">
-    <div class="stat"><b>~100 W</b><span>working entry-panel size</span></div>
+    <div class="stat"><b>~150 W</b><span>working entry-panel target under evaluation</span></div>
     <div class="stat"><b>US$55–60</b><span>working hardware-cost target</span></div>
     <div class="stat"><b>No inverter</b><span>at the entry level</span></div>
     <div class="stat"><b>No central battery</b><span>storage lives in appliances</span></div>
@@ -59,7 +59,7 @@
     <div class="architecture charging-flow" aria-label="Entry system charging-hub diagram">
       <h3>One solar lead-in, one household charging hub.</h3>
       <div class="flow-row">
-        <div class="flow-box"><strong>~100 W panel</strong><small>Outside in useful sun</small></div>
+        <div class="flow-box"><strong>~150 W panel</strong><small>Working entry target · outside in useful sun</small></div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-box"><strong>PV lead-in cable</strong><small>One low-voltage run into the house</small></div>
         <div class="flow-arrow" aria-hidden="true">→</div>
@@ -91,7 +91,7 @@
       <div class="bullet-list">
         <div class="bullet"><i>✓</i><div><strong>Multiple independent 5 V branches.</strong><br>One misbehaving load need not collapse every charging outlet.</div></div>
         <div class="bullet"><i>✓</i><div><strong>12 V branch under development.</strong><br>For small TVs, larger fans and other useful DC appliances.</div></div>
-        <div class="bullet"><i>→</i><div><strong>Next test:</strong> one real ~100 W solar panel feeding a realistic mix of partially discharged appliances for a full day.</div></div>
+        <div class="bullet"><i>→</i><div><strong>Next test:</strong> qualify the Distributor with real PV and realistic mixes of partially discharged appliances; current prototypes use ~100 W-class panels while the working deployment target is moving toward 150 W.</div></div>
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@
       <div class="bullet-list">
         <div class="bullet"><i>3</i><div><strong>5 V channels.</strong><br>Each channel feeds one stacked dual USB-A connector.</div></div>
         <div class="bullet"><i>2</i><div><strong>12 V channels.</strong><br>Each channel feeds a pair of center-positive 5.5 × 2.1 mm outputs.</div></div>
-        <div class="bullet"><i>PV</i><div><strong>Intended source.</strong><br>A nominal-12 V, roughly 100 W panel—typically around 18 V at maximum power and about 22 V open circuit. The qualified V1 operating window still has to be established experimentally.</div></div>
+        <div class="bullet"><i>PV</i><div><strong>Intended source.</strong><br>A nominal-12 V panel in the ~150 W class is now the working deployment target, typically around 18–20 V at maximum power and roughly 22–25 V open circuit. Current ~100 W-class prototypes are being used to qualify the electronics first.</div></div>
         <div class="bullet"><i>↔</i><div><strong>Replaceable connector leads.</strong><br>The field-use concept is to leave short, inexpensive pigtails plugged into the board so routine wear occurs at a replaceable cable end rather than at the PCB-mounted socket.</div></div>
         <div class="bullet"><i>V1</i><div><strong>Prototype mechanics.</strong><br>Several generic connector and protection-component footprints still need to be checked against the delivered parts.</div></div>
       </div>
@@ -182,9 +182,22 @@
         <div class="addon"><b>Water pump</b><span>Run when solar input is high and store the water rather than the electricity.</span></div>
         <div class="addon"><b>Immersion heater</b><span>Turn strong midday sun directly into stored hot water.</span></div>
         <div class="addon"><b>Food warmer / slow cooker</b><span>Insulation can carry midday thermal energy into the evening.</span></div>
-        <div class="addon"><b>Second panel + future 24 V module</b><span>More daytime headroom for pumps, tool charging and other modest 24 V loads without discarding the original panel or distributor.</span></div>
+        <div class="addon"><b>Second 150 W panel</b><span>Add it in parallel (1S2P) for a 300 W batteryless system. Later, the same two panels can be rewired in series (2S1P) when a 24 V battery and solar charger are added.</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band" id="growth-path">
+  <div class="container">
+    <div class="section-head"><h2>A deliberately additive growth path.</h2><p>The current design direction is to make the first panel the beginning of a household power system, not a disposable starter kit.</p></div>
+    <div class="cards">
+      <article class="card"><span class="num">150 W</span><h3>Start batteryless</h3><p>One nominal-12 V panel feeds the Distributor directly. Storage stays inside the lights, radio, fans, phone and power banks that need it.</p></article>
+      <article class="card"><span class="num">300 W</span><h3>Add the same panel in parallel</h3><p>A second 150 W panel in 1S2P roughly doubles daytime energy without replacing the original panel or requiring a central battery. Add-on Distributor modules can absorb the extra useful power.</p></article>
+      <article class="card"><span class="num">24 V</span><h3>Add shared storage when refrigeration earns it</h3><p>Rewire the same two panels to 2S1P, add a low-cost 24 V solar charger and a 25.6 V / 50 Ah LiFePO₄ battery. The battery bus can feed the original Distributor and an efficient DC refrigerator.</p></article>
+    </div>
+    <p class="callout" style="margin-top:24px"><strong>Why refrigeration matters.</strong> After lighting and air movement, refrigeration may be the next transformative household service. It is also a load large and continuous enough to justify moving from “battery in the appliance” to a shared household battery.</p>
+    <div class="page-footer-links"><a class="button secondary" href="Upgrade_Path_to_Tier-3.html">See the 150 W → 300 W → refrigeration path →</a></div>
   </div>
 </section>
 
@@ -198,7 +211,7 @@
     <p class="disclaimer" style="margin-top:22px"><strong>Important:</strong> This site documents research and prototype development. It is not currently soliciting customers, investments or donations, and no prices or performance figures should be treated as a commercial offer.</p>
     <div class="upgrade-notes" aria-label="Household upgrade path studies">
       <span>Upgrade paths:</span>
-      <a href="Upgrade_Path_to_Tier-3.html"><strong>Tier 3</strong><small>400 W+ PV · shared storage</small></a>
+      <a href="Upgrade_Path_to_Tier-3.html"><strong>Tier 3</strong><small>150 → 300 W · then 24 V storage + refrigeration</small></a>
       <a href="Upgrade_Path_to_Tier-5.html"><strong>Tier 5</strong><small>~2.4 kWp+ · 48 V household system</small></a>
     </div>
     <div class="reference-notes" aria-label="Project reference tables">
